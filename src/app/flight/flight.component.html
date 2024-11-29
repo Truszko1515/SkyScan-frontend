@@ -1,0 +1,31 @@
+<div class="container">
+    <h2>Loty w pobliżu: {{ cityName }}</h2>
+  
+    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+  
+    <table *ngIf="flights.length > 0">
+      <thead>
+        <tr>
+          <th>Lot</th>
+          <th>Linia Lotnicza</th>
+          <th>Lotnisko Początkowe</th>
+          <th>Lotnisko Docelowe</th>
+          <th>Wysokość (ft)</th>
+          <th>ETA</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let flight of flights">
+          <td>{{ flight.flight }}</td>
+          <td>{{ flight.airline }}</td>
+          <td>{{ flight.originAirportName || 'Brak informacji' }}</td>
+          <td>{{ flight.destAirportName || 'Brak informacji' }}</td>
+          <td>{{ flight.alt || 'Brak danych' }}</td>
+          <td>{{ flight.eta ? (flight.eta | date: 'short') : 'Brak danych' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    
+  </div>
+  

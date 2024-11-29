@@ -1,0 +1,87 @@
+.container {
+  width: 60%; /* Zmiana szerokości kontenera, aby widok był bardziej na lewo */
+  margin: 0; /* Przysunięcie do lewej */
+  text-align: left;
+  font-family: Arial, sans-serif;
+}
+
+form {
+  margin: 20px 0; /* Dodanie odstępu od przycisków */
+}
+
+input {
+  margin-right: 10px;
+  padding: 5px;
+}
+
+button {
+  padding: 5px 10px;
+  margin: 5px 0;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+}
+
+table {
+  width: 80%; /* Zmniejszenie szerokości tabeli */
+  margin-top: 20px; /* Dodanie odstępu nad tabelą */
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px 15px; /* Zwiększenie odstępów w komórkach */
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+u {
+  font-weight: bold;
+  color: #007bff;
+}
+
+label {
+  display: inline-block; /* Ustawienie label jako blokowego elementu inline */
+  margin-right: 10px; /* Dodanie przerwy między napisem a polem input */
+}
+
+#limit {
+  margin-left: 10px; /* Dodatkowa przerwa od napisu */
+  padding: 5px; /* Dopasowanie stylu do innych pól */
+}
+
+button.delete-btn {
+  padding: 5px 10px;
+  margin: 5px 0;
+  background-color: #ff4d4d; /* Czerwone tło */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button.delete-btn:hover {
+  background-color: #cc0000; /* Ciemniejszy czerwony po najechaniu */
+}
+
+
+

@@ -1,0 +1,71 @@
+<div class="container">
+  
+  <h1>Lista Miast</h1>
+
+  <button (click)="loadCities()">Wyświetl Lokalizacje</button>
+
+  <form (ngSubmit)="addCity()">
+    <input
+      type="text"
+      [(ngModel)]="cityName"
+      name="cityName"
+      placeholder="Podaj nazwę miasta"
+      required
+    />
+    <button type="submit">Dodaj miasto</button>
+  </form>
+
+  <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+
+  <div>
+    <label for="limit">Ilość miast do wyświetlenia:</label>
+    <input
+      id="limit"
+      type="number"
+      [(ngModel)]="limit"
+      min="1"
+    />
+  </div>
+
+  <table *ngIf="displayCities && cities.length > 0" border="1">
+    <thead>
+      <tr>
+        <th>Nazwa Miasta</th>
+        <th>Szerokość Geograficzna</th>
+        <th>Długość Geograficzna</th>
+        <th>Kraj</th>
+        <th>Kod Pocztowy</th>
+        <th>Stan</th>
+        <th>Akcje</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let city of cities">
+        <td><u>{{ city.name }}</u></td>
+        <td>{{ city.positionLat || 'Brak informacji' }}</td>
+        <td>{{ city.positionLng || 'Brak informacji' }}</td>
+        <td>{{ city.country || 'Brak informacji' }}</td>
+        <td>{{ city.postalCode || 'Brak informacji' }}</td>
+        <td>{{ city.state || 'Brak informacji' }}</td>
+        <td>
+          <button (click)="deleteCity(city.name)" class="delete-btn">
+            Usuń
+          </button>
+        </td>
+        <td>
+          <button (click)="showFlights(city)" class="flight-btn">Znajdź Samoloty</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p *ngIf="displayCities && cities.length === 0">Brak lokalizacji do wyświetlenia.</p>
+</div>
+
+<div *ngIf="showFlightView">
+  <app-flight
+    [cityName]="selectedCity.name"
+    [latitude]="selectedCity.positionLat"
+    [longitude]="selectedCity.positionLng"
+  ></app-flight>
+  <button (click)="showFlightView = false">Powrót do miast</button>
+</div>

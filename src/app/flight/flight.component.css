@@ -1,0 +1,39 @@
+.container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: left;
+    font-family: Arial, sans-serif;
+  }
+  
+  h2 {
+    color: #007bff;
+  }
+  
+  table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+  }
+  
+  th,
+  td {
+    padding: 10px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .error {
+    color: red;
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+  
