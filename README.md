@@ -1,6 +1,6 @@
 # TideSoftwareTaskFront
 
-This project was created with [Angular CLI] version 15.0.0.
+This project was created with Angular CLI version 15.0.0.
 
 ## Development server
 
